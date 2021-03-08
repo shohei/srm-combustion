@@ -3,12 +3,12 @@ clear; close all;
 %SRM関連定数
 % definition of SRM
 % BATES
-D = 30; %mm
-d = 10; %mm
-L = 50; %mm
+D = 30;
+d = 10;
+L = 50;
 m_grain = 50e-3; % 50g
-v_grain = pi/4*(D^2-d^2)*L; %mm3
-rho_p = m_grain / v_grain; %kg/mm3
+v_grain = pi/4*(D^2-d^2)*L;
+rho_p = m_grain / v_grain; 
 
 %気体関連定数
 % http://www.nakka-rocketry.net/techs.html
@@ -28,8 +28,6 @@ h2 = h*2;
 n2  = n*2;
 k2co3 = K*2+c+o*3;
 koh = K+o+h;
-c12h22o11 = c*12+h*22+o*11;
-kno3 = K+n+o*3;
 denominator = 3.8+5.21+7.79+3.07+3.14+3+0.27;
 % M = 1/denominator*(3.8*co2+5.21*co+7.79*h2o+3.07*h2+3.14*n2+3*k2co3+0.27*koh);
 % この場合のM=37.1568 実際はもう少し大きい値（~42）になる
@@ -47,18 +45,18 @@ D_e = 31.51; %nozzle exit diameter [mm]
 A_e = pi*D_e^2/4;
 
 % transient start-up
-a = @(t) r*t;
-Ab = 2*pi*a*L;
-v0 = 2*pi*L*(d+a);%instantaneous gas volume [mm3]; チャンバー内に存在する空隙→増える
+Ab = 2*pi*r*t*L;
+v0 = ;%instantaneous gas volume [mm3]; チャンバー内に存在する空隙→増える
 V_reacted = 2*pi*L*(r*t-d);%反応した固体燃料の体積
+c12h22o11 = c*12+h*22+o*11;
+kno3 = K+n+o*3;
 M_reactant = 1/7.29*(c12h22o11+6.29*kno3); %kg/mol
-m_reacted = V_reacted * rho_p; %kg
-N_reacted = m_reacted/M_reactant; %反応モル数→反応体積からグルコース+KNO3のモル数を割り出す
-rho_0 = M*N_reacted/v0;% instantaneous gas density [kg/mm3]; M(平均分子量)*モル数/v0
-C1 = Ab*a*(rho_p-rho_0); %tの関数
-C2 = A_t*sqrt(k/(R*T0))*(2/(k+1))^((k+1)/(2*(k-1))); %定数
-n = ;
-[t,p]=ode45(@(t,p) R*T0/v0*(C1(t)*p^n-p*C2), [0 3], 0);
+m_reacted = V_reacted * rho_p;
+N_reacted = V_reacted/M_reactant; %反応モル数→反応体積からグルコース+KNO3のモル数を割り出す
+rho_0 = ;% instantaneous gas density [kg/mm3]; M(平均分子量)*モル数/v0
+C1 = Ab*a*(rho_p-rho_0);
+C2 = A_t*sqrt(k/(R*T0))*(2/(k+1))^((k+1)/(2*(k-1)));
+[t,p]=ode45(@(t,p) R*T0/v0*(C1*p^n-p*C2), [0 3], 0);
 
 % steady_state 
 c_star = sqrt(R*T_0/(k*(2/(k+1))^((k+1)/(k-1))));
