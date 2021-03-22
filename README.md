@@ -3,7 +3,7 @@
 
 
 
-![burnrate.png](burnrate.png)
+![burnrate.png](misc/burnrate.png)
 
 
 

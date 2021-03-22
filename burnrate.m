@@ -1,8 +1,8 @@
 clear; close all;
 
-knsu = readtable('knsu');
-kndx = readtable('kndx');
-knsb = readtable('knsb');
+knsu = readtable('../data/knsu');
+kndx = readtable('../data/kndx');
+knsb = readtable('../data/knsb');
 
 [p_knsu,r_knsu]=calc_burnrate(knsu);
 [p_kndx,r_kndx]=calc_burnrate(kndx);
