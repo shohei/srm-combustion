@@ -1,8 +1,8 @@
 clear; close all;
 
-knsu = readtable('../data/knsu');
-kndx = readtable('../data/kndx');
-knsb = readtable('../data/knsb');
+knsu = readtable('./data/knsu');
+kndx = readtable('./data/kndx');
+knsb = readtable('./data/knsb');
 
 [p_knsu,r_knsu]=calc_burnrate(knsu);
 [p_kndx,r_kndx]=calc_burnrate(kndx);
@@ -32,7 +32,7 @@ for idx=1:length(ps)
     n = 0;
     a = 0;
     for jdx=1:length(burndata.p_low)
-        if p > burndata.p_low(jdx) && p < burndata.p_high(jdx)
+        if p >= burndata.p_low(jdx) && p < burndata.p_high(jdx)
             n = burndata.n(jdx);
             a = burndata.a(jdx);
         end
