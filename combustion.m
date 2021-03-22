@@ -58,17 +58,18 @@ rho_0 = M*N_reacted/v0;% instantaneous gas density [kg/mm3]; M(平均分子量)*
 C1 = Ab*a*(rho_p-rho_0); %tの関数
 C2 = A_t*sqrt(k/(R*T0))*(2/(k+1))^((k+1)/(2*(k-1))); %定数
 %圧力指数 (pressure exponent): 
-n = ; %定数：de Saint-Robert則 (KNSU??)
-n = ; %MESA: KNSB
+n = ; %de Saint-Robert: KNSU
 n = ; %PLATEAU: KNDX
+n = ; %MESA: KNSB
 [t,p]=ode45(@(t,p) R*T0/v0*(C1(t)*p^n-p*C2), [0 3], 0);
 
 % steady_state 
 c_star = sqrt(R*T_0/(k*(2/(k+1))^((k+1)/(k-1))));
-r = 3.6; %[mm/s] burn rate. Obtained: https://www.nakka-rocketry.net/burnrate.html 
 Ab = 2*pi*r*t*L;
 Kn = Ab / A_t;
-p = Kn * rho_p * c_star;
+
+% solve equation by bisection method
+% p = Kn * rho_p * (a*p^n) * c_star;
 
 
 
