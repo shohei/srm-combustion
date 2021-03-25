@@ -3,11 +3,13 @@ clear; close all;
 load_param;
 global burndata;
 burndata = readtable('./data/knsu.csv');
+% burndata = readtable('./data/kndx.csv');
+% burndata = readtable('./data/knsb.csv');
 
 t = 1; %[s] :決め打ち
 %f(p)=0となるpを2分法で求める
 f = @(p) p - get_Kn(get_r(p),t) * rho_p * get_r(p) * c_star;
-fs=[];
+fs=[];c
 xs=1:0.1:10;
 for idx=1:length(xs)
    x=xs(idx);
