@@ -1,9 +1,12 @@
 global grain;
 global k; global c_star; global rho_p;
-global L; global d; global A_t;
+global L0; global d0; global A_t; global N; global D0;
 
 % Load parameters (KNSU, KNDX, KNSB)
 params=grain;
+
+% number of grains
+N=1;
 
 % Characteristic velocity
 k = params.k; 
@@ -21,15 +24,13 @@ f_f = 0.35; % 35% of fuel
 rho_p = 1/(f_o/rho_o+f_f/rho_f); %Unit: g/cm3 or kg/mm3 (same value)
 
 % Motor dimension (BATES)
-D = 24; %mm
-d = 7.2; %mm
-L = 30; %mm
+D0 = 24; %mm
+d0 = 7.2; %mm
+L0 = 30; %mm
 
 % Nozzle dimension
-D_t = 11.14; %nozzle throat diameter [mm]
+D_t = 5; %nozzle throat diameter [mm]
 A_t = pi*D_t^2/4;
-D_e = 31.51; %nozzle exit diameter [mm] 
+D_e = 5; %nozzle exit diameter [mm] 
 A_e = pi*D_e^2/4;
-
-
 

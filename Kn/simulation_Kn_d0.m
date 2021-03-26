@@ -1,6 +1,6 @@
 clear; close all;
 
-d0s=[5,7.2,10,15]
+d0s=[5,7.2,10,15];
 for d0=d0s
 
 % for BATES (Ballistic Test and Evaluation System) grain
@@ -18,7 +18,7 @@ Kn =@(x) Ab(x)/At;
 
 Kns=[];
 xs=[];
-xmax=1/2*(D-d0)
+xmax=1/2*(D-d0);
 Ndiv=50;
 for x=linspace(0,xmax,Ndiv)
     xs(end+1)=x;
