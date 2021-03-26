@@ -2,14 +2,14 @@
 
 
 
-# Burn rate for each grain type
+# Burn rate r 
 ![burnrate.png](misc/burnrate.png)
 ```
 > burnrate
 ```
 
 
-# Steady state pressure
+# Steady state pressure P0
 ```
 > steady_state
 ```
