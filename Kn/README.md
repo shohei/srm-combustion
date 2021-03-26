@@ -19,5 +19,6 @@
 
 ![](lopt.png)
 
+- For above example (D=24mm, d0=7.2mm), Lopt=39.6mm
 
 
