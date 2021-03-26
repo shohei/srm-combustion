@@ -12,7 +12,7 @@ Burn rate r was calculated by the following formula.
 
 ![](misc/r.png)
 
-Where the constant a and n are dependent on the combustion pressure. I obtained the experimental value of (a,n) from Nakka's website. Here below is the theoretical plot using the experimental value of (a,n).
+Where the constant a and n are dependent on the combustion pressure. I obtained the experimental value of (a,n) from Nakka's website. Here below is the theoretical burnrate using the experimental value of (a,n).
 
 ![burnrate.png](misc/burnrate.png)
 
