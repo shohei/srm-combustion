@@ -1,5 +1,7 @@
 # Combustion simulation of solid rocket motor
 
+# References
+Nakka's website
 
 
 # Burn rate r 
