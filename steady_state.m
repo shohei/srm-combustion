@@ -3,7 +3,11 @@ clear; close all;
 global grain; global burndata; global rho_p; 
 global c_star; global Kn; 
 
-grain_name = 'knsu';
+
+grain_names = ["knsu","kndx","knsb"];
+
+for grain_name = grain_names
+% grain_name = 'knsu';
 % grain_name = 'kndx';
 % grain_name = 'knsb';
 grain = readtable(strcat('./parameter/',grain_name,'.csv'));
@@ -24,17 +28,21 @@ division = 100;
 
 % すべてMKS単位系に直して計算する
 f = @(p) p*1e6 - get_Kn(get_r(p),t) * (rho_p*1e3) * (get_r(p)*1e-3) * c_star;
-fs=[];
-xs=linspace(lower_limit,upper_limit,division);
-for idx=1:length(xs)
-   x=xs(idx);
-   fs(end+1)=f(x);
-end
-plot(xs,fs);
-hold on;
-plot(xs,zeros(size(xs)));
-title('識別関数 f(x)=0');
-big;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% デバッグ用 識別関数fのプロット
+% fs=[];
+% xs=linspace(lower_limit,upper_limit,division);
+% for idx=1:length(xs)
+%    x=xs(idx);
+%    fs(end+1)=f(x);
+% end
+% plot(xs,fs);
+% hold on;
+% plot(xs,zeros(size(xs)));
+% title('識別関数 f(x)=0');
+% big;
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 a(1)=lower_limit;
 b(1)=upper_limit;
@@ -66,12 +74,16 @@ Kns(end+1)=Kn;
 
 end
 
-figure();
 plot(ts,Ps);
+hold on;
 title(strcat('Pressure over time [',grain_name,']'));
 xlabel('Time [sec]');
 ylabel('Pressure [MPa]');
 big;
+
+end
+
+legend(grain_names);
 
 % plot(ts,Kns);
 % fprintf('Pressure = %f[MPa]\n',c(k-1));
