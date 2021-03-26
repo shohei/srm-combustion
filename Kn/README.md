@@ -14,7 +14,7 @@
 
 ![](Kn_BATES.png)
 
-- The neutral profile is optimal <del>because it can maintain high Kn during all the range of combustion</del> ->> The burn time may differ depending on L0. If this is true, the neutral profile is optimal because of the longest burntime with keeping relatively high Kn. See the graph below.
+- The neutral profile is optimal <del>because it can maintain high Kn during all the range of combustion</del> ->> The burn time may differ depending on L0. If this is true, the neutral profile is optimal because of the longest burntime with keeping relatively high Kn. See the graph below. (I doubt if the parameter d0 is changed in the graph below, not L0)
 
 ![](regres1.gif)
 
