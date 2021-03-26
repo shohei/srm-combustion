@@ -30,6 +30,12 @@ The both sides of the above formula is the function of P0. To find P0, I solved 
  
 ![](misc/f.png)
 
+Note that Klemmung Kn and burn area Ab was calculated as follows.
+
+![](misc/Kn.png)
+
+![](misc/Ab.png)
+
 
 ![burnrate.png](misc/steady_state.png)
 
