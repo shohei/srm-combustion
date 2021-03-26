@@ -8,7 +8,7 @@ Nakka's website
 ```
 > burnrate
 ```
-Burn rate r was calculated by the following formula.
+Burn rate r is calculated by the following formula.
 
 ![](misc/r.png)
 
