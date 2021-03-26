@@ -14,7 +14,10 @@
 
 ![](Kn_BATES.png)
 
-- The neutral profile is optimal because it can maintain high Kn during all the range of combustion
+- The neutral profile is optimal <del>because it can maintain high Kn during all the range of combustion</del> ->> The burn time may differ depending on L0. If this is true, the neutral profile is optimal because of the longest burntime with keeping relatively high Kn. See the graph below.
+
+![](regres1.gif)
+
 - The optimal grain length Lopt is calculated as follows
 
 ![](lopt.png)
