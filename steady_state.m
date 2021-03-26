@@ -76,7 +76,7 @@ end
 
 plot(ts,Ps);
 hold on;
-title(strcat('Pressure over time [',grain_name,']'));
+title('Pressure over time');
 xlabel('Time [sec]');
 ylabel('Pressure [MPa]');
 big;
