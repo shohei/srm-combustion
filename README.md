@@ -5,10 +5,16 @@ Nakka's website
 
 
 # Burn rate r 
-![burnrate.png](misc/burnrate.png)
 ```
 > burnrate
 ```
+Burn rate r was calculated by the following formula.
+
+![](misc/r.png)
+
+I obtained the experimental value from Nakka's website.
+
+![burnrate.png](misc/burnrate.png)
 
 
 # Steady state pressure P0
