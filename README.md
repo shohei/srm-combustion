@@ -26,7 +26,7 @@ Combustion pressure at the steady-state is the following.
 
 ![](misc/p0.png)
 
-The both sides of the above formula is the function of P0. To find P0, I solved the follwing equation by the [**bisection method**](https://en.wikipedia.org/wiki/Bisection_method).
+The both sides of the above formula is the function of P0 (That is like, y = f(y)). To find P0, I solved the follwing equation by the [**bisection method**](https://en.wikipedia.org/wiki/Bisection_method).
  
 ![](misc/f.png)
 
