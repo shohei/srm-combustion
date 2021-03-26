@@ -24,4 +24,11 @@
 
 - For above example (D=24mm, d0=7.2mm), Lopt=39.6mm
 
+## Effect of d0
+
+![](result_d0.png)
+- Above graph somehow gives different plot from Nakka's one. Especially, the initial Kn is different. To coincide the Kn, all the three parameters D, d0, and L0 must be the same. I need more clarifications on the condition of Nakka's graph...
+
+
+
 
