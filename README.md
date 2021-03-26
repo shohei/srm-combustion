@@ -12,7 +12,7 @@ Burn rate r was calculated by the following formula.
 
 ![](misc/r.png)
 
-I obtained the experimental value from Nakka's website.
+Where the constant a and n are dependent on the combustion pressure. I obtained the experimental value of (a,n) from Nakka's website.
 
 ![burnrate.png](misc/burnrate.png)
 
