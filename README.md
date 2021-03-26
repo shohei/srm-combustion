@@ -31,6 +31,7 @@ The both sides of the above formula is the function of P0 (That is like, y = f(y
 ![](misc/f.png)
 
 Note that Klemmung Kn and burn area Ab was calculated as follows.
+The formula is for BATES, where the outer surface is inhibited.
 
 ![](misc/Kn.png)
 
