@@ -7,5 +7,5 @@ function Kn_ans = get_Kn(r,t)
   L = L0 - 2*x;
   Ab = N*(1/2*pi*(D0^2-d^2)+pi*L*d);
   Kn_ans = Ab / A_t;
-  Kn = Kn_ans;
+  Kn = Kn_ans; %For updating global variable Kn in main script
 end
