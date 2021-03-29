@@ -47,6 +47,3 @@ The derivative of the combustion pressure P0 is calcuated by the following equat
 where T0 is the AFT (adiabatic flame temperature), v0/rho0 is the volume/density of the product gas (mixture of several molecules).
 
 
-
-
-
