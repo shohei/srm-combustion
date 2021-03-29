@@ -23,6 +23,8 @@ h=(time_end-time_start)/N;
 ts=linspace(time_start,time_end,N);
 ys=zeros(1,N);
 ys(1)=0;
+
+
 f = @(x,y) a*y;
 
 for t = ts
