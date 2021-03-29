@@ -1,6 +1,7 @@
 global grain;
 global k; global c_star; global rho_p;
-global L0; global d0; global A_t; global N; global D0;
+global L0; global d0; global A_t; global N; global D0; 
+global R; global T_0;
 
 % Load parameters (KNSU, KNDX, KNSB)
 params=grain;

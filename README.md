@@ -37,7 +37,6 @@ The formula is for BATES, where the outer surface is inhibited.
 
 ![](misc/Ab.png)
 
-
 ![burnrate.png](misc/steady_state.png)
 
 # Start-up pressure P0

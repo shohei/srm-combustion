@@ -2,7 +2,8 @@ clear; close all;
 
 global grain; global burndata; global rho_p; 
 global c_star; global Kn; 
-
+global R; % R depends on each gas
+global T_0;
 
 grain_names = ["knsu","kndx","knsb"];
 
@@ -21,11 +22,13 @@ time_end=1;
 N=20;
 h=(time_end-time_start)/N;
 ts=linspace(time_start,time_end,N);
-ys=zeros(1,N);
-ys(1)=0;
+ps=zeros(1,N);
+ps(1)=0;
 
-
-f = @(x,y) a*y;
+x = @(p,t) get_r(p)*t; %web regress
+v_0 = @(p,t) 2*pi*D0^2*x(p,t)+pi*(d0+2*x(p,t))*(L0-2*x(p,t)); %gas volume
+dpdt = @(p,t) R*T_0/v_0(p,t)*...
+            ( get_Ab(r,t)*get_r(p)*(rho_p-p/(R*T_0)) - p*A_t/c_star );
 
 for t = ts
 
