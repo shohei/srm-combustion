@@ -25,11 +25,15 @@ ts=linspace(time_start,time_end,N);
 ps=zeros(1,N);
 ps(1)=0;
 
-x = @(p,t) get_r(p)*t; %web regress
+% MKS単位系になおして計算する
+x = @(p,t) get_r(p)*1e-3*t; %web regress
 v_0 = @(p,t) 2*pi*D0^2*x(p,t)+pi*(d0+2*x(p,t))*(L0-2*x(p,t)); %gas volume
-dpdt = @(p,t) R*T_0/v_0(p,t)*...
-            ( get_Ab(r,t)*get_r(p)*(rho_p-p/(R*T_0)) - p*A_t/c_star );
+dpdt = @(p,t) R*T_0/v_0(p*1e6,t)*...
+            ( get_Ab(r,t)*get_r(p*1e6)*(rho_p-p*1e6/(R*T_0)) - p*1e6*A_t/c_star );
 
+f = @(p) p*1e6 - get_Kn(get_r(p),t) * (rho_p*1e3) * (get_r(p)*1e-3) * c_star;
+
+        
 for t = ts
 
 end
