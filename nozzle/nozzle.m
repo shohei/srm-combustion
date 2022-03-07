@@ -54,3 +54,12 @@ elseif pb>ph &&  pb<pd
 elseif pb>pd
     disp('ベンチュリノズル→亜音速ノズル');
 end
+
+
+
+
+
+
+
+
+
