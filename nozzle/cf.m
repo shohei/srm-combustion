@@ -10,19 +10,20 @@ Ae = pi*re^2;
 e = Ae/Astar;
 pa = 0.1013; %[MPa] 背圧は大気圧
 
-% p0_pa = Pc/pa;
-% fprintf('p0_pa: %.2f\n',p0_pa);
-% sigma_star = sqrt(k*(2/(k+1))^((k+1)/(k-1)));
-% 
-% pa_pe = [0.01 0.5 1 1.5 2 2.5 3 3.5 4 4.5 5];
-% pe = pa./pa_pe;
-% K = 2*k/(k-1);
-% a = sigma_star * sqrt(K*(1-(pa/Pc)^((k-1)/k)));
-% b1 = sqrt(K*(1-(pe./Pc).^((k-1)/k)));
-% b = sigma_star * (pe./Pc-pa/Pc)./((pe./Pc).^(1/k).*b1);
-% Cf = a + b;
-% 
-% plot(pa_pe,Cf);
+figure();
+p0_pa = Pc/pa;
+fprintf('p0_pa: %.2f\n',p0_pa);
+sigma_star = sqrt(k*(2/(k+1))^((k+1)/(k-1)));
+
+pa_pe = [0.01 0.5 1 1.5 2 2.5 3 3.5 4 4.5 5];
+pe = pa./pa_pe;
+K = 2*k/(k-1);
+a = sigma_star * sqrt(K*(1-(pa/Pc)^((k-1)/k)));
+b1 = sqrt(K*(1-(pe./Pc).^((k-1)/k)));
+b = sigma_star * (pe./Pc-pa/Pc)./((pe./Pc).^(1/k).*b1);
+Cf = a + b;
+
+plot(pa_pe,Cf);
 
 
 figure();
