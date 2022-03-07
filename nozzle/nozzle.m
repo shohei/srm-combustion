@@ -7,7 +7,8 @@ Pc = 1.31; %[MPa] Nakkaのグラフの値。OpenMotorでも同様の値(KNSB)。
 num = ((k-1)/2)*(2/(k+1))^((k+1)/(k-1));
 den = (pe/Pc)^(2/k)-(pe/Pc)^((k+1)/k);
 rstar = 12; %mm
-re = 50; %mm
+%re = 50; %mm
+re = 25; %mm
 Astar = pi*rstar^2;
 Ae = pi*re^2;
 pb = 0.1013; %[MPa] 背圧は大気圧
@@ -22,7 +23,7 @@ epsilon = 1e-6;
 f1(pe) = sqrt(num/den)-Ae/Astar;
 p1 = vpasolve(f1,pe);
 try
-  p2 = vpasolve(f1,pe,[0 pe-epsilon]);
+  p2 = vpasolve(f1,pe,[0 p1-epsilon]);
 catch
   p2 = vpasolve(f1, pe, [p1+epsilon Inf]);
 end
