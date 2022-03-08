@@ -1,14 +1,25 @@
 clear; close all; clc;
 syms pe;
-% k = 1.177; %Propep 3での計算値(KNSB) ストイキ
+
+%% Nakuja N-2ロケットの値
+% 固体推進剤 KNSB
 % Pc = 1.31; %[MPa] Nakkaのグラフの値。OpenMotorでも同様の値(KNSB)。
-% rstar = 12; %mm
-%re = 50; %mm
-% re = 25; %mm
-% e = 17
-% Astar = pi*rstar^2;
-% Ae = pi*re^2;
-% pb = 0.1013; %[MPa] 背圧は大気圧
+% rstar = 12mm, re = 50mm より e = 17.4
+% k = 1.177: Propep3の計算値(KNSB), O:F=65:35
+% pb=0.1013MPa 大気圧
+
+%% LE-7A（H2Aロケット１段目）の値
+% 液体推進剤 LOX/LH2
+% Pc = 12 MPa
+% ノズル開口比 e = 38.7
+% k = 1.14 (NASA CEAの値)
+
+%% Marlin(Falcon9ロケット1段目)の値
+% 液体推進剤 LOX/RP-1
+% Pc = 6.77 MPa
+% ノズル開口比 e = 16
+% 比熱比k 1.22: NASA CEAでの計算値
+% 混合比 2.34
 
 fprintf('***入力パラメータ***\n');
 Pc = input('燃焼室圧力 Pc [Mpa]: ');
