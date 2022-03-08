@@ -1,5 +1,4 @@
 clear; close all; clc;
-syms pe;
 
 %% Nakuja N-2ロケットの値
 % 固体推進剤 KNSB
@@ -31,6 +30,7 @@ if isempty(pb)
 end
 
 epsilon = 1e-6;
+syms pe;
 num = ((k-1)/2)*(2/(k+1))^((k+1)/(k-1));
 den = (pe/Pc)^(2/k)-(pe/Pc)^((k+1)/k);
 f1(pe) = sqrt(num/den)-e;
