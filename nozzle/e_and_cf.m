@@ -37,9 +37,9 @@ K = 2*k/(k-1);
 a = sigma_star * sqrt(K*(1-(pe./Pc).^((k-1)/k)));
 b1 = sqrt(K*(1-(pe./Pc).^((k-1)/k)));
 b = sigma_star * (pe./Pc-pa/Pc)./((pe./Pc).^(1/k).*b1);
-Cf = a + b;
+Cf1 = a + b;
 
-plot(es,Cf);
+plot(es,Cf1);
 title('ノズル膨張比eと推力係数の関係（海面上）');
 xlabel('ノズル膨張比 e=Ae/At');
 ylabel('推力係数 Cf');
@@ -54,9 +54,9 @@ K = 2*k/(k-1);
 a = sigma_star * sqrt(K*(1-(pe./Pc).^((k-1)/k)));
 b1 = sqrt(K*(1-(pe./Pc).^((k-1)/k)));
 b = sigma_star * (pe./Pc-pa/Pc)./((pe./Pc).^(1/k).*b1);
-Cf = a + b;
+Cf2 = a + b;
 
-plot(es,Cf);
+plot(es,Cf2);
 title('ノズル膨張比eと推力係数の関係（高度10km: 285hPa）');
 xlabel('ノズル膨張比 e=Ae/At');
 ylabel('推力係数 Cf');
@@ -72,12 +72,25 @@ K = 2*k/(k-1);
 a = sigma_star * sqrt(K*(1-(pe./Pc).^((k-1)/k)));
 b1 = sqrt(K*(1-(pe./Pc).^((k-1)/k)));
 b = sigma_star * (pe./Pc-pa/Pc)./((pe./Pc).^(1/k).*b1);
-Cf = a + b;
+Cf3 = a + b;
 
-plot(es,Cf);
+plot(es,Cf3);
 title('ノズル膨張比eと推力係数の関係（真空中）');
 xlabel('ノズル膨張比 e=Ae/At');
 ylabel('推力係数 Cf');
+big;
+grid;
+
+
+figure();
+plot(es,Cf1);
+hold on;
+plot(es,Cf2);
+plot(es,Cf3);
+title('ノズル膨張比eと推力係数の関係');
+xlabel('ノズル膨張比 e=Ae/At');
+ylabel('推力係数 Cf');
+legend('海面上','高度10km','宇宙空間');
 big;
 grid;
 
