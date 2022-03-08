@@ -27,6 +27,7 @@ plot(pa_pe,Cf);
 title('ノズル出口圧力peと推力係数Cfの関係');
 xlabel('圧力比 pa/pe');
 ylabel('推力係数 Cf');
+grid;
 
 
 figure();
