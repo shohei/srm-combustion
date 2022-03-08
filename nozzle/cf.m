@@ -37,5 +37,3 @@ xlabel('圧力比 pc/pe');
 ylabel('推力係数 Cf')
 big;
 grid;
-
-
